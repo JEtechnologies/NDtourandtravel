@@ -78,7 +78,7 @@ function journeyToday() {
     ];
     var summary = entries.map(function(entry) { return entry[0] + ': ' + entry[1]; }).join('\n');
     field('enquirySummary').textContent = summary;
-    field('waLink').href = 'https://wa.me/919896547757?text=' + encodeURIComponent('Hello N dee Tour and Travel,\n\nI would like to enquire about a taxi/travel service.\n\n' + summary + '\n\nPlease share availability and quotation.');
+    field('waLink').href = 'https://wa.me/919896547757?text=' + encodeURIComponent('Hello N dee tour and travel,\n\nI would like to enquire about a taxi/travel service.\n\n' + summary + '\n\nPlease share availability and quotation.');
     Array.from(container.children).forEach(function(el) { el.style.display = 'none'; });
     success.classList.add('show');
     success.focus();
