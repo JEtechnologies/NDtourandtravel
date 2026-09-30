@@ -1,6 +1,6 @@
 # NDtourandtravel
 
-Responsive website for **N D Tour & Travel**, Karnal, Haryana.
+Responsive website for **N Dee Tour & Travel**, Karnal, Haryana.
 
 ## Website
 
