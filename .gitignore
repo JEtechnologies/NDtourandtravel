@@ -1,0 +1,16 @@
+# Local assistant settings and QA artifacts
+.claude/
+.codex/
+.agents/
+desktop-check.png
+mobile-check.png
+qa-site.cjs
+
+# Local secrets and dependencies
+.env
+.env.*
+!.env.example
+node_modules/
+*.log
+.DS_Store
+Thumbs.db
