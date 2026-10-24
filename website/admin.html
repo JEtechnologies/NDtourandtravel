@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#0a1628">
+  <title>Admin | N dee tour and travel</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/admin.css">
+</head>
+<body>
+  <main class="page-shell">
+    <section class="login-card" id="login-view" aria-labelledby="login-title">
+      <a class="brand" href="/" aria-label="Back to website"><span class="brand-mark">ND</span><span>N dee tour and travel</span></a>
+      <div class="eyebrow">Secure business access</div>
+      <h1 id="login-title">Admin login</h1>
+      <p class="muted">Sign in to manage your business details and travel services.</p>
+      <form id="login-form" class="stack-form">
+        <label>Admin ID<input name="username" autocomplete="username" required></label>
+        <label>Password<input name="password" type="password" autocomplete="current-password" required></label>
+        <button class="button primary" type="submit">Sign in</button>
+      </form>
+      <p class="form-message" id="login-message" role="status"></p>
+      <a class="back-link" href="/">← Back to website</a>
+    </section>
+
+    <section class="admin-app" id="admin-view" hidden>
+      <header class="topbar">
+        <a class="brand" href="/" aria-label="Back to website"><span class="brand-mark">ND</span><span>N dee tour and travel</span></a>
+        <div class="top-actions"><a class="button ghost" href="/" target="_blank" rel="noopener">View website ↗</a><button class="button ghost" id="logout-button" type="button">Log out</button></div>
+      </header>
+      <div class="dashboard">
+        <div class="page-heading"><div><div class="eyebrow">Website management</div><h1>Admin panel</h1><p class="muted">Update what customers see on your website.</p></div><button class="button primary save-button" id="save-button" type="button">Save all changes</button></div>
+        <div class="notice" id="status-message" role="status" hidden></div>
+        <section class="panel" aria-labelledby="business-title">
+          <div class="panel-heading"><div><div class="eyebrow">Business details</div><h2 id="business-title">Contact information</h2></div></div>
+          <div class="business-grid">
+            <label>Business name<input id="business-name" maxlength="100" required></label>
+            <label>Mobile / call number<input id="business-phone" inputmode="tel" maxlength="40" required></label>
+            <label>WhatsApp number<input id="business-whatsapp" inputmode="numeric" maxlength="20" required><span class="hint">Include country code, for example 919896547757.</span></label>
+            <label>Email address<input id="business-email" type="email" maxlength="160"></label>
+            <label class="wide">Business address<textarea id="business-address" rows="2" maxlength="240" required></textarea></label>
+          </div>
+        </section>
+        <section class="panel" aria-labelledby="services-title">
+          <div class="panel-heading service-heading"><div><div class="eyebrow">Services</div><h2 id="services-title">Website services <span class="count" id="service-count">0</span></h2><p class="muted">Edit service details and photos, add a service, or hide one from the website.</p></div><button class="button secondary" id="add-service" type="button">＋ Add service</button></div>
+          <div class="service-list" id="service-list"></div>
+          <div class="empty-state" id="empty-services" hidden>No services yet. Add your first service above.</div>
+        </section>
+        <footer class="dashboard-footer">Your changes are saved to the website repository and published through its Vercel deployment.</footer>
+      </div>
+    </section>
+  </main>
+
+  <dialog class="editor" id="service-editor">
+    <form id="service-form" method="dialog">
+      <div class="editor-heading"><div><div class="eyebrow">Service details</div><h2 id="editor-title">Edit service</h2></div><button class="icon-button" value="cancel" aria-label="Close">×</button></div>
+      <input type="hidden" id="service-id">
+      <label>Service name<input id="service-name" maxlength="100" required></label>
+      <label>Short description<textarea id="service-summary" rows="3" maxlength="300" required></textarea><span class="hint">Shown on the homepage service card.</span></label>
+      <label>Full description<textarea id="service-details" rows="5" maxlength="3000" required></textarea><span class="hint">Shown when a visitor opens this service.</span></label>
+      <label>Service page link <span class="optional">(optional)</span><input id="service-url" maxlength="300" placeholder="Leave blank for an automatic service page"></label>
+      <label>Service picture<input id="service-image" type="file" accept="image/jpeg,image/png,image/webp,image/avif"><span class="hint">JPG, PNG, WebP or AVIF, up to 2.7 MB.</span></label>
+      <div class="image-preview-wrap" id="image-preview-wrap" hidden><img id="image-preview" alt="Service image preview"><button class="text-button" id="remove-image" type="button">Remove picture</button></div>
+      <label class="switch-row"><input id="service-active" type="checkbox"><span>Show this service on the website</span></label>
+      <p class="form-message" id="editor-message" role="status"></p>
+      <div class="editor-actions"><button class="button ghost" value="cancel">Cancel</button><button class="button primary" id="service-submit" type="button">Save service</button></div>
+    </form>
+  </dialog>
+  <script src="/admin.js" defer></script>
+</body>
+</html>

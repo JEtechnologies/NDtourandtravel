@@ -1,0 +1,19 @@
+{
+  "business": {
+    "name": "N dee tour and travel",
+    "address": "205/7, Gandhi Nagar,Ram Nagar karnal, Haryana,132001",
+    "phone": "+91-9896547757",
+    "whatsapp": "919896547757",
+    "email": "naagar.travels7757@gmail.com"
+  },
+  "services": [
+    {"id":"local-city-taxi","name":"Local City Taxi","summary":"Comfortable transportation for daily local travel and city journeys in and around Karnal.","details":"Comfortable and reliable taxi service for daily local travel and city journeys in and around Karnal. Available for point-to-point rides, errands, hospital visits, station pickups and more.","image":"","url":"/services/local-taxi.html","active":true},
+    {"id":"airport-transfers","name":"Airport Transfers","summary":"Reliable pickup and drop-off services for airport travel with timely arrivals.","details":"Book a reliable airport transfer from Karnal with timely pickup and drop-off for Delhi, Chandigarh and other airports.","image":"","url":"/services/airport-transfer.html","active":true},
+    {"id":"outstation-taxi","name":"Outstation Taxi","summary":"Convenient transportation for intercity and long-distance journeys across states.","details":"Plan an intercity journey with convenient outstation taxi service from Karnal to destinations across North India.","image":"","url":"/services/outstation-taxi.html","active":true},
+    {"id":"wedding-transportation","name":"Wedding Transportation","summary":"Transportation solutions for weddings, family functions and special occasions.","details":"Transportation solutions for weddings, family functions and special occasions in Karnal and nearby areas.","image":"","url":"/services/wedding-transportation.html","active":true},
+    {"id":"event-transportation","name":"Event Transportation","summary":"Travel support for events, meetings, functions and group movements.","details":"Travel support for events, meetings, functions and group movements in and around Karnal.","image":"","url":"/services/event-transportation.html","active":true},
+    {"id":"car-rentals","name":"Car Rentals","summary":"Flexible vehicle rental options for different travel requirements.","details":"Flexible car rental options in Karnal for daily, weekly and monthly travel requirements.","image":"","url":"/services/car-rental.html","active":true},
+    {"id":"mini-bus-rental","name":"Mini Bus Rental","summary":"Transportation for groups, functions, tours and events with comfortable seating.","details":"Mini bus transportation for groups, functions, tours and events with comfortable seating.","image":"","url":"/services/mini-bus.html","active":true},
+    {"id":"tempo-traveller","name":"Tempo Traveller","summary":"Group travel solution for family trips, tours and larger parties.","details":"Tempo traveller rental for family trips, tours, group outings and larger parties.","image":"","url":"/services/tempo-traveller.html","active":true}
+  ]
+}

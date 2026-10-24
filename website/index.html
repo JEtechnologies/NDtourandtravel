@@ -167,6 +167,9 @@ h1,h2,h3{font-family:var(--font-heading);line-height:1.2}
 .service-icon svg{width:28px;height:28px;color:var(--gold)}
 .service-card h3{font-size:1.15rem;margin-bottom:10px;font-family:var(--font-body);font-weight:700}
 .service-card p{color:var(--text-light);font-size:0.9rem;margin-bottom:20px;line-height:1.6}
+.service-card.has-image{padding-top:0}
+.service-card-image{width:calc(100% + 48px);height:180px;object-fit:cover;margin:0 -24px 20px;border-radius:var(--radius-lg) var(--radius-lg) 0 0}
+.service-icon-fallback{display:grid;place-items:center;width:48px;height:48px;border-radius:12px;background:rgba(240,180,42,.16);color:var(--gold-dark);font-size:1.3rem;margin-bottom:18px}
 .btn-enquire{background:var(--navy);color:var(--white);padding:10px 22px;border-radius:8px;font-size:0.85rem;font-weight:600;transition:var(--transition);display:inline-flex;align-items:center;gap:6px}
 .btn-enquire:hover{background:var(--gold);color:var(--navy)}
 
@@ -840,7 +843,7 @@ Continue on WhatsApp
 <div class="contact-info-cards">
 <div class="contact-card">
 <div class="cc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
-<div><h3>Our Office</h3><p>205/7 Gandhi Nagar,<br>Karnal, Haryana – 132001</p></div>
+<div><h3>Our Office</h3><p data-business-address>205/7, Gandhi Nagar,Ram Nagar karnal, Haryana,132001</p></div>
 </div>
 <div class="contact-card">
 <div class="cc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg></div>
@@ -902,7 +905,7 @@ Continue on WhatsApp
 </div>
 <div>
 <h4>Contact Info</h4>
-<div class="footer-contact-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg> 205/7 Gandhi Nagar, Karnal, Haryana – 132001</div>
+<div class="footer-contact-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg> <span data-business-address>205/7, Gandhi Nagar,Ram Nagar karnal, Haryana,132001</span></div>
 <div class="footer-contact-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg> <a href="tel:+919896547757" style="color:var(--gold)">+91-9896547757</a></div>
 <div class="footer-contact-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg> <a href="mailto:naagar.travels7757@gmail.com" style="color:var(--gold)">naagar.travels7757@gmail.com</a></div>
 </div>
@@ -987,6 +990,7 @@ var ham=document.getElementById('hamburger');
 if(nav.classList.contains('open')&&!nav.contains(e.target)&&!ham.contains(e.target)){closeNav()}
 });
 </script>
+<script src="site-content.js" defer></script>
 <script src="booking.js"></script>
 </body>
 </html>

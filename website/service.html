@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="N dee tour and travel service in Karnal, Haryana.">
+  <meta name="theme-color" content="#0a1628">
+  <title>Travel Service | N dee tour and travel</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <style>
+    *{box-sizing:border-box}body{margin:0;background:#f5f7fb;color:#18243a;font:16px/1.65 Inter,system-ui,sans-serif}a{color:inherit;text-decoration:none}.header{background:#0a1628;color:#fff;padding:13px 18px}.header-inner{max-width:1080px;margin:auto;display:flex;align-items:center;justify-content:space-between}.brand{font:700 1.1rem "Playfair Display",serif}.brand b{display:inline-grid;place-items:center;width:40px;height:40px;margin-right:8px;border-radius:10px;background:#f0b42a;color:#0a1628;font:800 16px Inter,sans-serif}.hero{background:linear-gradient(135deg,#0a1628,#1a3060);color:#fff;padding:62px max(22px,calc((100% - 880px)/2));text-align:center}.hero h1{font:700 clamp(2rem,5vw,3.1rem) "Playfair Display",serif;margin:4px auto 15px}.hero p{max-width:720px;margin:0 auto;color:#d4dcec}.hero-image{width:min(100%,900px);max-height:430px;object-fit:cover;border-radius:16px;margin:0 auto 28px;display:block}.content{max-width:880px;margin:36px auto;padding:0 20px}.content p{white-space:pre-line}.button{display:inline-block;border-radius:9px;padding:12px 20px;margin:6px 5px;font-weight:700}.gold{background:#f0b42a;color:#0a1628}.outline{border:1px solid #fff;color:#fff}.back{color:#8a6207;font-weight:700}.notice{padding:45px 20px;text-align:center;color:#65748b}.hidden{display:none}
+  </style>
+</head>
+<body>
+  <header class="header"><div class="header-inner"><a class="brand" href="/"><b>ND</b>N dee tour and travel</a><a href="/#services">All services</a></div></header>
+  <main id="service-page" class="hidden"><section class="hero" id="service-hero"><img class="hero-image hidden" id="service-image" alt=""><h1 id="service-name"></h1><p id="service-summary"></p><div><a class="button gold" href="/#booking">Book your ride</a><a class="button outline" id="call-link" href="tel:+919896547757">Call now</a></div></section><article class="content"><a class="back" href="/#services">← All services</a><p id="service-details"></p></article></main>
+  <div class="notice" id="service-notice">Loading service…</div>
+  <script>
+    fetch('/data/site-content.json').then(r=>r.json()).then(data=>{
+      const id=new URLSearchParams(location.search).get('id');
+      const service=data.services.find(item=>item.id===id && item.active!==false);
+      if(!service){document.getElementById('service-notice').textContent='This service could not be found.';return;}
+      document.title=`${service.name} | ${data.business.name}`;
+      document.getElementById('service-name').textContent=service.name;
+      document.getElementById('service-summary').textContent=service.summary;
+      document.getElementById('service-details').textContent=service.details||service.summary;
+      document.getElementById('call-link').href=`tel:+${data.business.phone.replace(/\D/g,'')}`;
+      if(service.image){const image=document.getElementById('service-image');image.src=service.image;image.alt=service.name;image.classList.remove('hidden');}
+      document.getElementById('service-notice').classList.add('hidden');document.getElementById('service-page').classList.remove('hidden');
+    }).catch(()=>document.getElementById('service-notice').textContent='Service details are temporarily unavailable.');
+  </script>
+</body>
+</html>

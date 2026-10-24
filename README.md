@@ -8,6 +8,24 @@ The deployable website is in `website/`. It includes the homepage, eight service
 
 Open `website/index.html` locally, or serve the `website/` directory with any static web server. No package installation or build step is required.
 
+## Admin panel
+
+Open `/admin` on the deployed website to manage the business name, address, mobile number, WhatsApp number, email, and service list. The panel supports adding, editing, hiding, deleting services, and uploading service photos. Save commits the content to this GitHub repository; the connected Vercel project then publishes the updated site. New services use a generated detail page unless a custom page link is set.
+
+The admin login is checked by serverless functions and its session is stored in a secure, HTTP-only cookie. Never add the admin password or GitHub token to website files. Before using the panel, add these environment variables to the Vercel project for Production and Preview:
+
+| Variable | Value |
+| --- | --- |
+| `ADMIN_USERNAME` | Admin ID, set privately in Vercel |
+| `ADMIN_PASSWORD` | Admin password, set privately in Vercel |
+| `ADMIN_SESSION_SECRET` | A long random secret (at least 32 random bytes) |
+| `GITHUB_TOKEN` | Fine-grained GitHub token with Contents read/write for this repository |
+| `GITHUB_OWNER` | `JEtechnologies` (optional; this is the default) |
+| `GITHUB_REPO` | `NDtourandtravel` (optional; this is the default) |
+| `GITHUB_BRANCH` | `main` (optional; this is the default) |
+
+Set the supplied admin ID and password directly in Vercel's encrypted environment settings. Generate `ADMIN_SESSION_SECRET` with a password manager or a secure random generator. After adding the variables, redeploy the site. `/admin` opens the login page; the API returns a setup message until these variables are available. The GitHub token stays in the server environment and is used only by the protected save and image upload endpoints.
+
 ## Booking enquiries
 
 The form validates the journey details and prepares a WhatsApp message. Customers must select **Continue on WhatsApp** and send the message to the business. The website does not send email or store enquiry details. Availability and bookings are confirmed directly by the team.
@@ -22,7 +40,7 @@ Before going live, confirm the purchased domain and update the canonical URL, Op
 
 - Phone: +91-9896547757
 - Email: naagar.travels7757@gmail.com
-- Address: 205/7 Gandhi Nagar, Karnal, Haryana – 132001
+- Address: 205/7, Gandhi Nagar,Ram Nagar karnal, Haryana,132001
 
 ## Checks performed
 
