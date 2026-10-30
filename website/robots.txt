@@ -1,3 +1,4 @@
 User-agent: *
 Allow: /
-Sitemap: https://www.ndeetourandtravel.com/sitemap.xml
+
+Sitemap: https://www.ndtourandtravel.in/sitemap.xml
